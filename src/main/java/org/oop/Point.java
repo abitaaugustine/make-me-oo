@@ -1,27 +1,27 @@
 package org.oop;
 
 public class Point {
-    private double x;
-    private double y;
-
-    public double getX() {
-        return x;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
+    private final double x;
+    private final double y;
 
     public Point(double x, double y) {
         this.x = x;
         this.y = y;
+    }
+
+    public double distance(Point to) {
+        double xDistance = getdifference(this.x, to.x);
+        double yDistance = getdifference(this.y, to.y);
+        return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
+    }
+
+    public double direction(Point to) {
+        double xDistance = getdifference(this.x, to.x);
+        double yDistance = getdifference(this.y, to.y);
+        return Math.atan2(yDistance, xDistance);
+    }
+
+    private double getdifference(double value1, double value2) {
+        return value1 - value2;
     }
 }
