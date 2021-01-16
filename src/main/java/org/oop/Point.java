@@ -10,18 +10,18 @@ public class Point {
     }
 
     public double distance(Point to) {
-        double xDistance = getdifference(this.x, to.x);
-        double yDistance = getdifference(this.y, to.y);
+        double xDistance = getDifference(this.x, to.x);
+        double yDistance = getDifference(this.y, to.y);
         return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
     }
 
     public double direction(Point to) {
-        double xDistance = getdifference(this.x, to.x);
-        double yDistance = getdifference(this.y, to.y);
+        double xDistance = getDifference(this.x, to.x);
+        double yDistance = getDifference(this.y, to.y);
         return Math.atan2(yDistance, xDistance);
     }
 
-    private double getdifference(double value1, double value2) {
+    private double getDifference(double value1, double value2) {
         return value1 - value2;
     }
 }
